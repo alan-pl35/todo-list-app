@@ -1,9 +1,8 @@
 import React, {useState} from 'react'
-import {isEqual} from 'lodash'
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlusSquare} from '@fortawesome/free-solid-svg-icons'
  import {v4 as uuidV4} from 'uuid'
- import ListaTareas from './ListaTareas'
 const Formulario = ({tareas, setTareas}) =>{
 
     

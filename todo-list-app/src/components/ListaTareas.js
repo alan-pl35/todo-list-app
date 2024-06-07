@@ -16,7 +16,6 @@ const ListaTareas = ({tareas , setTareas, ocultarTareasCompletadas}) => {
             return tarea.id === id ? {...tarea , tarea: textoTarea} : tarea
         }))
     
-        console.log('tarea id' , id)
     }
     
     const eliminarTarea = (id) => {
