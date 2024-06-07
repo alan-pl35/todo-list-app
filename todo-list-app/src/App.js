@@ -4,13 +4,28 @@ import React , {useState , useEffect} from 'react'
 import Header from './components/Header';
 import Formulario from './components/Formulario';
 import ListaTareas from './components/ListaTareas'
+import { config } from '@fortawesome/fontawesome-svg-core';
 const App = ()=> {
-  const [tareas, setTareas] = useState([]);
-  const [ocultarTareasCompletadas, setOcultarTareasCompletadas] = useState(false);
 
+  const tareasLocalStorage = localStorage.getItem('tareas') ? JSON.parse(localStorage.getItem('tareas')) : [];
+
+  const [tareas, setTareas] = useState(tareasLocalStorage);
   useEffect(()=>{
+    localStorage.setItem('tareas' , JSON.stringify(tareas))
     console.log(tareas)
   } , [tareas])
+
+  
+
+  let configOcultarCompletadas =(localStorage.getItem('ocultarTareasFlag') === null);
+
+  const [ocultarTareasCompletadas, setOcultarTareasCompletadas] = useState(configOcultarCompletadas);
+
+  //useEffect para ocultar tareasCommpletadas
+  useEffect(()=> {
+    localStorage.setItem('ocultarTareasFlag' , ocultarTareasCompletadas.toString())
+  } , [ocultarTareasCompletadas])  
+
 
   
   return (

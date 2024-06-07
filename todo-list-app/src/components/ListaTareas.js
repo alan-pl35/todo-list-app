@@ -20,13 +20,7 @@ const ListaTareas = ({tareas , setTareas, ocultarTareasCompletadas}) => {
     }
     
     const eliminarTarea = (id) => {
-        setTareas(tareas.filter(tarea=>{
-            if(tarea.id !== id) {
-                return tarea
-            } 
-
-            return ;
-        }))
+        setTareas(tareas.filter(tarea=>tarea.id !== id))
     }
 
 

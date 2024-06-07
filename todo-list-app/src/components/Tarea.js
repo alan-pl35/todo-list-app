@@ -12,7 +12,6 @@ const Tarea = ({tarea , completarTarea , modificarTarea, eliminarTarea , ocultar
     const actualizarTarea = (e) =>{
         e.preventDefault()
         setEditarTarea(!editarTarea);
-        console.log('editar tarea value' , editarTarea)
         modificarTarea(tarea.id,nuevaTarea)
     }
 
